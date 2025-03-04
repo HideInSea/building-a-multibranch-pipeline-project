@@ -3,7 +3,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Hello world!'
+                sh 'npm install'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh './jenkins/scripts/test.sh'
             }
         }
     }
